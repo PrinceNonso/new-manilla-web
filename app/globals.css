@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap'); /* Add Inter if using interchangeably */
+@import 'tailwindcss';
+
+:root {
+  --grey-500: #868686; /* define your grey color */
+}
+
+@theme {
+  /* === Brand Colors === */
+  --color-primary: #281ac9;
+  --color-pry-text: #181635;
+
+  --color-brand-regular: #d5e9f3;
+  --color-brand-light: #818cf8;
+  --color-brand-dark: #312e81;
+  --color-brand-light: #1abfc8;
+  --color-brand-lighter: #d7e3ff59;
+  --color-lightest: #d5f9fb5c;
+  --color-blue-1: #181635;
+  --color-dark-1: #282828;
+  --color-dark: #1d1d1;
+  --color-secondary: #faca31;
+
+  /* === Grays === */
+  --color-gray-100: #f3f4f6;
+  --color-gray-300: #d1d5db;
+  --color-gray-500: #868686; /* your custom gray */
+  --color-gray-700: #374151;
+  --color-bleu-900: #111827;
+  --color-bleu: #281ac9;
+
+  /* === Fonts === */
+  --font-sans: 'Raleway', system-ui, sans-serif;
+  --font-raleway: 'Raleway', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+
+  /* === container ==== */
+}
+
+/* Apply Raleway globally (default for body) */
+body {
+  font-family: var(--font-sans);
+}
+
+.marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.blog-card {
+  border: 8px solid rgba(52, 51, 51, 0); /* semi-transparent border */
+  border-radius: 30px;
+  width: 100%;
+  background: rgba(93, 93, 93, 0.5); /* semi-transparent background */
+  backdrop-filter: blur(10px); /* frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-8 sm:px-12 md:px-14 lg:px-16 xl:px-20;
+  }
+
+  .contain {
+    @apply max-w-[800px] lg:mx-auto;
+  }
+}
+
+.text {
+  color: #181635;
+  -webkit-text-stroke: 4px #181635;
+  text-shadow: 0px 4px 4px white;
+}
+
+.box {
+  -webkit-box-shadow: -4px 4px 0px 9px rgba(40, 26, 201, 1);
+  -moz-box-shadow: -3px 5px 0px 9px rgba(40, 26, 201, 1);
+  box-shadow: -4px 3px 0px 6px rgba(40, 26, 201, 1);
+}
+
+.test {
+    color: #181635;
+  text-shadow:
+    2px 2px 0 #fff,
+    /* White outline */ -2px 2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px -2px 0 #fff,
+    5px 8px 13px rgba(0, 0, 0, 0.23); /* Drop shadow */
+  font-weight: bold;
+  letter-spacing: -1px;
+}
