@@ -1,129 +1,128 @@
-import Link from "next/link";
-import Image from "next/image";
-import { GrFacebookOption } from "react-icons/gr";
-import { FaInstagram } from "react-icons/fa";
-import { AiFillGithub } from "react-icons/ai";
-import { IoLogoTwitter } from "react-icons/io";
+import Image from 'next/image';
+import React from 'react';
 
-export default function Footer() {
+const Footer: React.FC = () => {
+  const socials = [
+    {
+      icon: '/FaTelegramPlane.svg',
+      link: '',
+    },
+    {
+      icon: '/Vector.svg',
+      link: '',
+    },
+    {
+      icon: '/AiFillInstagram.svg',
+      link: '',
+    },
+
+    {
+      icon: '/BsTwitterX.svg',
+      link: '',
+    },
+    {
+      icon: '/FaLinkedinIn.svg',
+      link: '',
+    },
+  ];
+
   return (
-    <footer className="bg-gradient-to-r from-[#f9fffc] via-20% to-brand-light/40 py-12 mt-16">
-      <div className="max-w mx-auto px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-6">
-          {/* Logo & About */}
-          <div className="flex-1 max-w-sm">
-            <Image
-              src="/manilla-finance-logo.svg"
-              width={180}
-              height={40}
-              alt="Manilla Technologies"
-              className="mb-4"
-            />
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed ">
-              Manilla Finance is a modern fintech platform simplifying utility,
-              travel, and cross-border payments across Africa and North America.
-            </p>
-          </div>
-          {/* Explore */}
-          <div className="min-w-[150px]">
-            <h4 className="font-semibold mb-3">Explore</h4>
-            <ul className="space-y-2 text-gray-800 text-sm">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/company">Company</Link>
-              </li>
-              <li>
-                <Link href="/suite">Manilla Suite</Link>
-              </li>
-              <li>
-                <Link href="/legal">Legal</Link>
-              </li>
-            </ul>
-          </div>
-          {/* Links */}
-          <div className="min-w-[150px]">
-            <h4 className="font-semibold mb-3">Links</h4>
-            <ul className="space-y-2 text-gray-800 text-sm">
-              <li>
-                <Link href="/terms">Terms & Policy</Link>
-              </li>
-              <li>
-                <Link href="/blog">Blog</Link>
-              </li>
-            </ul>
-          </div>
-          {/* Follow Us + App */}
-          <div className="flex flex-col items-cente">
-            <h4 className="font-semibold mb-3">Follow Us</h4>
-            <div className="flex items-center space-x-3 mb-5">
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="bg-[#4B4B4B] rounded-full p-2.5 text-white hover:bg-primary transition-all">
-                <IoLogoTwitter size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="bg-[#4B4B4B] rounded-full p-2.5 text-white hover:bg-primary transition-all">
-                <GrFacebookOption size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="bg-[#4B4B4B] rounded-full p-2.5 text-white hover:bg-primary transition-all">
-                <FaInstagram size={20} />
-              </a>
-              <a
-                href="#"
-                aria-label="GitHub"
-                className="bg-[#4B4B4B] rounded-full p-2.5 text-white hover:bg-primary transition-all">
-                <AiFillGithub size={20} />
-              </a>
-            </div>
+    <footer className="bg-[#222] text-gray-300 rounded-xl pb-2 pt-8 px-4 md:px-12 mx-12">
+      {/* Newsletter Section */}
+      <div className="relative w-16 h-16">
+        {/* Envelope Icon */}
 
-            <p className="text-sm mb-3 text-gray-700">Download Manilla App</p>
-            <div className="flex space-x-3">
-              <a href="#" className="hover:scale-105 transition">
-                <Image
-                  src="/hero/googlePlay.png"
-                  alt="Get it on Google Play"
-                  width={130}
-                  height={40}
-                />
-              </a>
-              <a href="#" className="hover:scale-105 transition">
-                <Image
-                  src="/hero/appleStore.png"
-                  alt="Download on the App Store"
-                  width={130}
-                  height={40}
-                />
-              </a>
-            </div>
-          </div>
-          {/* QR Code */}{" "}
-          <div className="flex flex-col lg:text-center lg:items-end">
-            <p className="font-semibold mb-3">Download Manilla App</p>
-            <p className="text-xs text-gray-600 mb-2">Scan Now to Download</p>
-            <Image
-              src="/qrcode.png"
-              alt="QR code"
-              width={160}
-              height={160}
-              className="rounded-md"
+        <Image src={'/footerImg.png'} alt="" fill />
+      </div>
+      <div className="flex flex-col md:flex-row justify-between items-center md:items-start py-8 gap-8">
+        <div className="flex flex-col md:w-1/2">
+          <h3 className="font-light text-white text-2xl mb-1">Get our weekly</h3>
+          <h2 className="font-bold text-yellow-400 text-3xl tracking-wider mb-2">NEWSLETTER</h2>
+          <p className="mb-2 text-gray-400">
+            Get weekly updates on the newest stories, and tips right in your mailbox:{' '}
+            <span className="text-white font-bold">Subscribe now!</span>
+          </p>
+        </div>
+
+        {/* Newsletter Form */}
+        <div className="md:w-1/2 w-full flex flex-col gap-3">
+          <span className="mb-2">Stay up to date with our newsletters</span>
+          <form className="flex flex-col sm:flex-row gap-3 w-full">
+            <input
+              type="email"
+              className="flex-1 py-3 px-4 rounded-full bg-[#393939] text-gray-100 focus:outline-none"
+              placeholder="Enter your email"
             />
+            <button
+              type="submit"
+              className="py-3 cursor-pointer px-8 rounded-full bg-yellow-400 text-gray-900 font-semibold transition hover:bg-yellow-500"
+            >
+              Subscribe
+            </button>
+          </form>
+          <small className="text-xs text-gray-400 mt-2">
+            By submitting your email address, you agree to receive occasional marketing messages
+            from Manilla, from which you can unsubscribe at any time. For more information, please
+            see our{' '}
+            <a href="#" className="underline text-gray-200">
+              privacy policy
+            </a>
+            .
+          </small>
+        </div>
+      </div>
+
+      {/* Lower Footer Section */}
+      <div className="bg-[#292929] rounded-xl flex flex-col  items-center md:items-start justify-between mt-6 py-6 px-6">
+        {/* Logo and Brand */}
+        <div className="flex flex-col md:flex-row justify-between w-full items-center gap-4">
+          <div className="relative w-44 h-20  flex items-center gap-2">
+            <Image src={'/manilla-white.svg'} alt="" fill />
+          </div>
+          {/* Navigation */}
+          <div className="flex gap-7 text-white text-sm font-semibold transition-all duration-300 ease-linear  ml-6">
+            <a href="#" className="hover:underline transition-all duration-300 ease-linear">
+              Products
+            </a>
+            <a href="#" className="hover:underline">
+              Services
+            </a>
+            <a href="#" className="hover:underline">
+              About
+            </a>
+            <a href="#" className="hover:underline">
+              Contact
+            </a>
+          </div>
+
+          <div className="flex gap-6">
+            {socials.map((s, i) => (
+              <div key={i} className="">
+                <div className="relative w-4 h-4 md:h-5 md:h-5 lg:w-6 lg:h-6">
+                  <Image src={s.icon} alt="" fill />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Footer bottom */}
-        <hr className="my-10 border-gray-200" />
-        <p className="text-center text-xs md:text-sm text-blue-1 ">
-          © 2025 Manilla Finance. All rights reserved.
-        </p>
+        <div className="flex flex-col md:flex-row  justify-between items-center w-full mt-4 lg:mt-0 border-t border-t-gray-500 pt-3">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-5 text-xs md:text-sm text-gray-400 mt-2 md:mt-0">
+            <a href="#" className="hover:underline">
+              Terms of Service
+            </a>
+            <a href="#" className="hover:underline">
+              Privacy Policy
+            </a>
+          </div>
+          {/* Copyright */}
+          <div className="text-xs md:text-sm  text-gray-400 md:text-right mt-2">
+            © Manilla Finance 2025
+          </div>
+        </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

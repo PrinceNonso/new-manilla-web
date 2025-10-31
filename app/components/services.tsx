@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { MdOutlineKeyboardDoubleArrowRight } from 'react-icons/md';
 
@@ -126,14 +127,15 @@ const tabs = [
         </ul>
       </>
     ),
-    image: '/btcimg.jpg',
+    image: '/swap.png',
   },
 ];
 
 export const BillPaymentsTabs: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
-  return (
+    return (
+       <section>
     <div className="relative bg-[url('/graphic.svg')] bg-cover bg-center bg-no-repeat flex flex-col lg:flex-row  rounded-3xl min-h-[420px] font-sans max-w-7xl mx-auto gap-4 px-8 lg:px-0">
       {/* Overlay for readability (optional dark tint) */}
       <div className="absolute inset-0 bg-blac bg-opacity-20 rounded-3xl"></div>
@@ -185,6 +187,13 @@ export const BillPaymentsTabs: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
+
+     
+      </div>
+       <div className="relative w-full h-28">
+        <Image src={'/aline.png'} alt="" fill />
+      </div>
+      </section>
+      
   );
 };
