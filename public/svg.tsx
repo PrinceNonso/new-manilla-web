@@ -31,7 +31,6 @@ export const Secle = () => (
     <circle cx="19.5" cy="21.0801" r="11.5" fill="#282828" />
   </svg>
 );
-
 //     width="596"
 //     height="496"
 //     viewBox="0 0 596 496"
