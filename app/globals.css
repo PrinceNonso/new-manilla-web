@@ -105,3 +105,33 @@ body {
   font-weight: bold;
   letter-spacing: -1px;
 }
+
+.global-payments-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.global-payments-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 900;
+  color: #FFFFFF;
+  -webkit-text-stroke: 3px #3b82f6;
+  filter: drop-shadow(-2px 4px 0px #281AC9);
+  transform: translate(4px, 4px);
+  z-index: 0;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.global-payments-main {
+  position: relative;
+  font-weight: 900;
+  color: #FFFFFF;
+  -webkit-text-stroke: 3px #000000;
+  filter: drop-shadow(-2px 4px 0px #281AC9);
+  z-index: 10;
+  margin: 0;
+  letter-spacing: -0.025em;
+}

@@ -27,9 +27,9 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#222] text-gray-300 rounded-xl pb-2 pt-8 px-4 md:px-12 mx-12">
+    <footer className="bg-[#222] text-gray-300 rounded-xl pb-2 pt-8 px-4 md:px-12 mx-6 md:mx-12">
       {/* Newsletter Section */}
-      <div className="relative w-16 h-16">
+      <div className="relative w-12 h-12 md:w-16 md:h-16">
         {/* Envelope Icon */}
 
         <Image src={'/footerImg.png'} alt="" fill />
@@ -37,9 +37,11 @@ const Footer: React.FC = () => {
       <div className="flex flex-col md:flex-row justify-between items-center md:items-start py-8 gap-8">
         <div className="flex flex-col md:w-1/2">
           <h3 className="font-light text-white text-2xl mb-1">Get our weekly</h3>
-          <h2 className="font-bold text-yellow-400 text-3xl tracking-wider mb-2">NEWSLETTER</h2>
-          <p className="mb-2 text-gray-400">
-            Get weekly updates on the newest stories, and tips right in your mailbox:{' '}
+          <h2 className="font-extrabold bg-gradient-to-r from-[#AA7414] to-[#FBCF21] bg-clip-text text-transparent text-2xl md:text-3xl lg:text-5xl tracking-wider mb-2">
+            NEWSLETTER
+          </h2>
+          <p className="mb-2 text-gray-400  md:max-w-md ">
+            Get weekly updates on the newest stories, and tips right <br className='hidden lg:block'/> in your mailbox:{' '}
             <span className="text-white font-bold">Subscribe now!</span>
           </p>
         </div>

@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import React from 'react';
+
 interface ManillaPaySectionProps {
   smallHeader: string;
   mainHeader: string;
@@ -8,6 +11,8 @@ interface ManillaPaySectionProps {
   onButtonClick?: () => void;
   imageSrc: string;
   imageAlt?: string;
+  imageWidth?: number; // New: Custom width for Next.js Image (in pixels)
+  imageHeight?: number; // New: Custom height for Next.js Image (in pixels)
   borderColor?: string;
   buttonBgColor?: string;
   bgBody?: string;
@@ -56,6 +61,8 @@ export default function ManillaPaySection({
   onButtonClick,
   imageSrc,
   imageAlt = '',
+  imageWidth = 400, // Default fallback width
+  imageHeight = 300, // Default fallback height
   borderColor = '',
   buttonBgColor = '',
   bgBody = '',
@@ -87,10 +94,10 @@ export default function ManillaPaySection({
 
   return (
     <section
-      className={`border-t-12 ${borderClass} rounded-4xl ${bgBodyClass} px-10 mx-aut flex flex-col xl:flex-row items-center md:items-start gap-12 md:gap-24 overflow-hidden relative`}
+      className={`w-full border-t-12 ${borderClass} rounded-4xl ${bgBodyClass} px-4 sm:px-10 mx-auto max-w-6xl flex flex-col xl:flex-row items-center md:items-start gap-6 md:gap-12 overflow-hidden relative`}
     >
       {/* Text Content */}
-      <div className="flex flex-col max-w-xl text-left py-8">
+      <div className="flex flex-col max-w-xl text-left py-4 md:py-8 flex-1">
         <div className="text-center lg:text-left">
           <span className={getTextClass(smallHeaderColor, 'text-sm md:text-base mb-3 font-bold')}>
             {smallHeader}
@@ -98,37 +105,57 @@ export default function ManillaPaySection({
           <h1
             className={getTextClass(
               mainHeaderColor,
-              'text-3xl md:text-4xl font-semibold leading-tight mb-5',
+              'text-2xl md:text-3xl xl:text-4xl font-semibold leading-tight mb-5',
             )}
           >
             {mainHeader}
           </h1>
-          <p className={getTextClass(descriptionColor, 'mb-6')}>{description}</p>
+          <p className={getTextClass(descriptionColor, 'mb-6 text-sm md:text-base')}>
+            {description}
+          </p>
         </div>
         {subdes && (
-          <p className={getTextClass(subdesColor, ' text-base font-medium md:text-lg')}>
+          <p className={getTextClass(subdesColor, 'text-base font-medium md:text-lg mb-4')}>
             {subdes}
           </p>
         )}
-        <ul className={getTextClass(featuresColor, 'list-disc list-inside space-y-2 mb-4')}>
+        <ul
+          className={getTextClass(
+            featuresColor,
+            'list-disc list-inside space-y-2 mb-4 max-h-32 overflow-y-auto',
+          )}
+        >
           {features.map((feat, idx) => (
-            <li key={idx}>{feat}</li>
+            <li key={idx} className="text-sm md:text-base">
+              {feat}
+            </li>
           ))}
         </ul>
         <button
-          className={`${buttonBgClass} ${buttonTextClass} rounded-full px-16 py-3 mb-6 md:py-4 text-lg font-semibold lg:max-w-max shadow-lg transition cursor-pointer hover:scale-105 `}
+          className={`${buttonBgClass} ${buttonTextClass} rounded-full px-6 md:px-16 py-3 mb-4 md:py-4 text-base md:text-lg font-semibold lg:max-w-max shadow-lg transition cursor-pointer hover:scale-105 w-full xl:w-auto`}
           onClick={onButtonClick}
         >
           {buttonLabel}
         </button>
       </div>
       {/* Image */}
-      <div className="relative shrink-0  max-w-lg">
-        <img
-          src={imageSrc}
-          alt={imageAlt}
-          className="w-full h-[30rem] object-contain rounded-3xl "
-        />
+      <div className="relative shrink-0 w-full xl:w-auto max-w-lg xl:max-w-md">
+        <div
+          className="relative w-full"
+          style={{
+            aspectRatio: `${imageWidth}/${imageHeight}`,
+          }}
+        >
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={imageWidth}
+            height={imageHeight}
+            className="w-full h-full object-contain rounded-3xl"
+            sizes="(max-width: 1280px) 100vw, 40vw" // Responsive sizes for optimization
+            priority={false} // Set true if this is above-the-fold
+          />
+        </div>
       </div>
     </section>
   );

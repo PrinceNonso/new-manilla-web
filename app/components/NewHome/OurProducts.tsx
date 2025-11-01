@@ -20,11 +20,13 @@ const OurProducts = () => {
       buttonLabel: 'Start Using Manilla Pay',
       imageSrc: '/mobsvg.svg',
       imageAlt: 'Manilla Pay Mobile App 1',
+      imageWidth: 500, // Custom width for this slide's image (in pixels)
+      imageHeight: 400, // Custom height for this slide's image (in pixels)
       borderColor: 'blue',
       buttonBgColor: 'darkgr',
     },
     {
-      smallHeader: 'Crypto Debit Card',
+      smallHeader: 'Crypto Debit Cards',
       mainHeader: 'Spend Crypto Like Cash – Without the Complexity',
       description:
         'Our upcoming Manilla Crypto Debit Card links your digital wallet to everyday life. Buy groceries, pay for gas, shop online, or withdraw cash - no need to convert, wait, or worry.',
@@ -37,6 +39,8 @@ const OurProducts = () => {
       buttonLabel: 'Join Waitlist Now',
       imageSrc: '/manilla-card.png',
       imageAlt: 'Manilla Pay Mobile App 2',
+      imageWidth: 800,
+      imageHeight: 500,
       borderColor: 'yello',
       buttonBgColor: 'darkgr',
     },
@@ -45,7 +49,6 @@ const OurProducts = () => {
       mainHeader: 'Fueling the Future of Smart Spending',
       description:
         'MNLA is the utility token at the heart of the Manilla ecosystem. It does more than just power transactions - it rewards you for participation and unlocks deeper access.',
-
       subdes: 'Why Hold MNLA?',
       features: [
         'Pay for services at discounted rates',
@@ -56,6 +59,8 @@ const OurProducts = () => {
       buttonLabel: 'Start Using Manilla Pay',
       imageSrc: '/coinBg.png',
       imageAlt: 'Manilla Pay Mobile App 2',
+      imageWidth: 400, // Custom width for this slide
+      imageHeight: 300, // Custom height for this slide
       borderColor: 'yello',
       buttonBgColor: 'plain',
       bgBody: 'blueBg',
@@ -66,19 +71,18 @@ const OurProducts = () => {
       featuresColor: 'white/50',
       buttonTextColor: 'dark',
     },
-
-    // Add more slides as needed
+    // Add more slides as needed, including their custom imageWidth and imageHeight
   ];
 
   return (
-    <section className=" container ">
-      <div className="container bg-dark-1 text-white rounded-xl py-8">
+    <section className="container px-4">
+      <div className="container bg-dark-1 text-white rounded-2xl py-8">
         <div className="flex flex-col items-center justify-center py-8 space-y-6">
           <div className="relative w-48 h-14 hover:scale-105 cursor-pointer transition-all duration-300 ease-linear">
             <Image src={'/OurProdBtn.png'} alt="" fill />
           </div>
           <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold">Manilla Products</h2>
-          <div className="text-center lg:max-w-254 text-lg text-[#E5E5E5] tracking-wide ">
+          <div className="text-center lg:max-w-254 text-sm md:text-lg text-[#E5E5E5] tracking-wide">
             <p>
               Manilla offers a suite of innovative solutions designed to make everyday financial
               transactions seamless and secure. Each product is built for speed, reliability, and
@@ -88,7 +92,7 @@ const OurProducts = () => {
           </div>
         </div>
 
-        <div>
+        <div className="w-full max-w-7x mx-auto">
           <Carousel
             className="w-full"
             opts={{
@@ -103,7 +107,7 @@ const OurProducts = () => {
           >
             <CarouselContent className="pb-2">
               {carouselData.map((d, i) => (
-                <CarouselItem key={i}>
+                <CarouselItem key={i} className="basis-full">
                   <ManillaPaySection {...d} />
                 </CarouselItem>
               ))}

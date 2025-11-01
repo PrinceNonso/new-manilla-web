@@ -72,7 +72,7 @@ const OurServices = () => {
           />
           {/* Overlay Text */}
           <div className="absolute inset-0 flex flex-col justify-center items-center  bg-opacity-50 rounded-lg text-center text-white p-8 space-y-8">
-            <div className="bg-white p-3 px-10 rounded-full  text-blue-1 font-semibold box">
+            <div className="bg-white p-1.5 lg:p-3 px-10 rounded-full  text-blue-1 font-semibold box">
               Our Services
             </div>
             <h1 className="test text-2xl  md:text-5xl lg:max-w-4xl">
