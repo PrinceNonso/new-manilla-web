@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar />
       <main className="">
         <HeroSection />
-        {/* <WhyChooseUsSection /> */}
+        <WhyChooseUsSection />
         <WhatMakesUsDifferentSection />
         <OurProductsSection />
         <OurServicesSection />

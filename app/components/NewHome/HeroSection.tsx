@@ -20,41 +20,46 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative  z-10  flex flex-col lg:gap-16 lg:flex-row justify-center items-center h-full text-white container  lg:ml-8 pb-28">
         <div className="space-y-6">
-          <div className="relative w-60 h-14">
-            <Image src={'/GlobalPayments.svg'} alt="" fill />
-          </div>{' '}
-          <div className="relative w-60 h-12">
-            <Image src={'/localImpact.svg'} alt="" fill />
+          <div className="flex flex-row md:flex-col  space-y-8 gap-2 text-nowrap">
+            <div className="global-payments-wrapper">
+              <span className="global-payments-shadow text-2xl md:text-3xl lg:text-4xl">
+                Global Payments.
+              </span>
+              <span className="global-payments-main text-2xl md:text-3xl lg:text-4xl">
+                Global Payments.
+              </span>
+            </div>
+            <div className="ring-8 md:ring-12 ring-[#D4D0FF] translate-x-3 h-max w-max rounded-md skew-x-[-6deg] hover:skew-x-[-4deg] transition-transform duration-300">
+              {' '}
+              {/* Tilted outer bg; adjust -6deg for more/less bend */}
+              <div className="w-max p-1 md:p-3 px-10 rounded-lg border-4 border-white bg-primary font-bold text-2xl skew-x-[6deg">
+                {' '}
+                {/* Counter-skew inner to keep text straight */}
+                Local Impact!
+              </div>
+            </div>
           </div>
-          <p className="text-blue-1  max-w-xs  text-base md:text-lg font-medium">
+
+          <p className="text-blue-1  max-w-[20rem]  text-base md:text-lg font-medium text-cente mx-auto lg:mx-0">
             Manilla Pay - your all inclusive crypto-powered finance co-pilot for utility bills,
             travel, airtime, and business payments
           </p>
+
           <div className=" font-semibold text-blue-1 text-xl">
             <h2 className="flex gap-3 items-center">
               <DownloadIcon /> <span>Download Manilla Pay App</span>
             </h2>
 
-            <div></div>
-
             <div className="flex gap-">
-              {/* <div className="relative w-52 h-20">
+              <div className="relative w-52 h-20">
                 <Image src={'/hero/googlePlay.png'} alt="apple store" fill />
               </div>
               <div className="relative w-52 h-20">
                 <Image src={'/hero/appleStore.png'} alt="apple store" fill />
-              </div> */}
-
-              <div className="flex flex-row flex-nowrap items-center justify-center bg-red-500 p-2">
-                <img src={'/Apple.svg'} alt="apple store" className="w-10 h-10" />
-                <div className="flex flex-col">
-                  <span className="text-xs">Download on the </span>
-                  <span className="text-xl">App Store</span>
-                </div>
               </div>
             </div>
 
-            <div className="relative w-28 h-28">
+            <div className="hidden lg:block relative w-24 h-24 relative left-44">
               <Image src={'/heroImgs/Helix.png'} alt="apple store" fill />
             </div>
           </div>

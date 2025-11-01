@@ -117,8 +117,8 @@ body {
   left: 0;
   font-weight: 900;
   color: #FFFFFF;
-  -webkit-text-stroke: 3px #3b82f6;
-  filter: drop-shadow(-2px 4px 0px #281AC9);
+  -webkit-text-stroke: 3px #281ac9;
+  filter: drop-shadow(-2px 2px 0px #281AC9);
   transform: translate(4px, 4px);
   z-index: 0;
   margin: 0;
