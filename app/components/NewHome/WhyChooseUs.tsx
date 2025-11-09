@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
             </div>
 
             <div className="space-y-3 sm:space-y-4">
-              <h3 className="text-sm md:text-xl text-center xl:text-left font-semibold whitespace-nowrap">
+              <h3 className="text-xs md:text-xl text-center xl:text-left font-semibold whitespace-nowrap">
                 Built for Canadian lifestyles. Engineered for the blockchain generation.
               </h3>
               <div className="flex flex-wrap justify-center xl:justify-start gap-3 sm:gap-4 items-stretch">
